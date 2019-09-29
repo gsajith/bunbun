@@ -1,0 +1,430 @@
+/* ------------------- Vars -------------------------- */
+$header-height: 60px;
+$footer-height: 35px;
+$red: #EA526F;
+$orange: #FF8A5B;
+$peach: #FCEADE;
+$blue: #25CED1;
+$blue-hover: #2ca8ab;
+$black: #333;
+$white: #fff;
+$transition: .3s;
+$card-height: 300px;
+$max-width: 900px;
+
+/* ------------------- Basic -------------------------- */
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none;
+}
+
+#main {
+  height: 100%;
+}
+
+body {
+  height: 100vh;
+  background: $white;
+}
+
+/* ------------------- Flex containers -------------------------- */
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  height: calc(100vh - #{$header-height} - #{$footer-height});
+
+  .flex-item-half {
+    flex-basis: 50%;
+  }
+}
+
+/* ------------------- Atomic -------------------------- */
+.button {
+  background: $blue;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 6px;
+  height: 24px;
+  text-transform: uppercase;
+  color: $white;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: .5px;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+  padding: 12px;
+  transition: $transition;
+  
+  // From: https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+  
+  &:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    background: $blue-hover;
+  }
+}
+
+.title {
+  color: $white;
+  font-family: Lilita One;
+  font-style: normal;
+  font-weight: normal;
+  -webkit-text-stroke: 2px $orange;
+}
+
+.subtitle {
+  font-family: Poppins;
+  font-style: normal;
+  text-transform: uppercase;
+  color: $red;
+  font-weight: 800;
+}
+
+.orange {
+  color: $orange;
+}
+
+.red {
+  color: $red;
+}
+
+.normal {
+  font-weight: normal;
+}
+
+.center {
+  text-align: center;
+}
+
+.textfield-header {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  color: $orange
+}
+
+.textfield-input {
+  border: none;
+  height: 48px;
+  padding-left: 10px;
+  color: $black;
+  background-color: $peach;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  
+  &::placeholder {
+    color: $orange;
+  }
+}
+
+/* -------------------- Header ------------------------- */
+.header {
+  display: flex;
+  height: 60px;
+  flex-basis: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+  
+  #lockup {
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 20px;
+    
+    .title {
+      font-size: 32px;
+    }
+    
+    .subtitle {
+      margin-top: 6px;
+      margin-left: 6px;
+      font-size: 14px;
+    }
+  }
+  
+  .header-item {
+    align-self: center;
+    text-transform: uppercase;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    color: $orange;
+    padding: 20px;
+    transition: $transition;
+    
+    &:hover {
+      color: $red;
+      cursor: pointer;
+    }
+  }
+}
+
+.header .active-header-item .header-item {
+  color: $blue;
+}
+
+/* ----------------------- Home ---------------------- */
+#home-image {
+  width: 100vw;
+  height: 100%;
+  border-radius: 24px 0px 0px 24px;
+  background: 
+    linear-gradient(90deg, rgba(252, 234, 222, 0.7) 0%, rgba(252, 234, 222, 0.434) 97.48%), 
+    url(https://cdn.glitch.com/94c5cfdd-a174-4ce4-9667-4041d68dcaa7%2Fbunhome.jpeg?v=1569539267303) 
+    left center / cover no-repeat;
+}
+
+#home-info-container, #about-info-container, #about-map-container {
+  align-self: center;
+  margin-top: calc(-1 * #{$header-height});
+  
+  p {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 22px;
+    color: $black;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 300px;
+  }
+  
+  #home-info, #about-info {
+    max-width: 300px;
+    margin: auto;
+
+    #home-title-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content: flex-end;
+      color: white;
+      
+      .title {
+        font-size: 90px;
+        line-height: 91px;
+        text-align: center;
+        letter-spacing: -3px;
+        -webkit-text-stroke: 4.5px $orange;
+      }
+      
+      .subtitle {
+        flex-basis: 100%;
+        position: relative;
+        text-align: end;
+        font-size: 16px;
+        line-height: 18px;
+      }
+    }
+  }
+}
+
+/* ----------------------- Shop ---------------------- */
+.card {
+  flex: 0 0 25%;
+  height: $card-height;
+  min-width: 225px;
+  margin: 0px 30px 30px 30px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.25);
+  transition: $transition;
+  
+  &:hover {
+    cursor: pointer;
+    box-shadow: 2px 4px 7px rgba(0, 0, 0, 0.35);
+    transform: translateY(-2px);
+    
+    &::after {
+      transition: $transition;
+      transform: translateY(-30px);
+    }
+  }
+  
+  &::after {
+    display: block;
+    position: relative;
+    background-image: linear-gradient(180deg, rgba(16, 16, 16, 0) 57.04%, rgba(16, 16, 16, 0.77) 100%);
+    margin-top: calc(-1.07 * #{$card-height});
+    height: 100%;
+    width: 100%;
+    content: '';
+  }
+  
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .name, .price {
+    color: white;
+    position: relative;
+    z-index: 1;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    text-shadow: 1px 1px black;
+  }
+  
+  .name {
+    bottom: 40px;
+    left: 10px;
+  }
+  
+  .price {
+    bottom: 70px;
+    right: 10px;
+    text-align: end;
+  }
+}
+
+#shop-flex {
+  max-width: $max-width;
+  margin-right: auto;
+}
+
+#shop-title {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  color: $red;
+  flex-basis: 100%;
+  margin: 30px;
+  margin-right: auto;
+  align-self: flex-start;
+}
+
+/* ----------------------- About ---------------------- */
+#about-flex {
+  width: 100vw;
+  justify-content: center;
+}
+
+#about-map-container, #about-info-container {
+  flex-basis: 30%;
+}
+
+#about-map-container {
+  img {
+    display: block;
+    margin: auto;
+  }
+  p {
+    margin: 20px auto;
+    width: 300px;
+    text-align: center;
+  }
+}
+
+#about-image {
+  flex-basis: 30%;
+  flex-grow: 1;
+  height: 100%;
+  border-radius: 24px 0px 0px 24px;
+  background: 
+    linear-gradient(90deg, rgba(252, 234, 222, 0.7) 0%, rgba(252, 234, 222, 0.434) 97.48%), 
+    url(https://cdn.glitch.com/94c5cfdd-a174-4ce4-9667-4041d68dcaa7%2Fbunhome.jpeg?v=1569539267303) 
+    left center / cover no-repeat;
+}
+
+/* ----------------------- Catering ---------------------- */
+
+#catering-form-container {
+  max-width: $max-width;
+  align-content: flex-start;
+    
+  h1 {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    margin: 30px;
+    font-size: 24px;
+    color: $red;
+    flex-basis: 100%;
+    margin-right: auto;
+    margin-bottom: 0px;
+    align-self: flex-start;
+  }
+
+  #catering-form-image {
+    margin-left: 30px;
+    margin-top: 30px;
+    flex-basis: 40%;
+    border-radius: 12px 0px 0px 12px;
+    overflow: hidden;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.25);
+    z-index: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  #catering-form-fields {
+    margin-right: 30px;
+    margin-top: 30px;
+    flex-basis: 40%;
+    border-radius: 0px 12px 12px 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 30px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.25);
+    z-index: 4;
+    
+    .textfield {
+      flex-basis: 100%;
+      margin-bottom: 10px;
+    
+      &:nth-child(4) {
+        flex-basis: 50%;
+        margin-right: 20px;
+      }
+      
+      &:nth-child(5) {
+        flex-basis: 10%;
+        flex-grow: 1;
+      }
+    }
+    
+    .textfield-input {
+      margin-top: 2px;
+      width: calc(100% - 10px);
+    }
+    
+    .button {
+      width: calc(100% + 10px);
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
