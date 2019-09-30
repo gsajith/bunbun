@@ -36,13 +36,13 @@ export default class About extends Component {
             <p className="center">
               <span className="normal">Hours</span>
               <br />
-              <span className="red">7am - 6pm</span>
+              <span className="red">7am - 6pm </span>
               Mon - Fri
               <br />
-              <span className="red">7am - 4pm</span>
+              <span className="red">7am - 4pm </span>
               Sat
               <br />
-              <span className="red">9am - 4pm</span>
+              <span className="red">9am - 4pm </span>
               Sun
               <br />
             </p>
