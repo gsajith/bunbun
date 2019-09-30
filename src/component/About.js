@@ -8,7 +8,7 @@ export default class About extends Component {
         <div id="about-map-container">
           <img
             alt="Map"
-            src="./assets/BunBunMap.png"
+            src="/assets/BunBunMap.png"
           />
           <p>
             Now serving

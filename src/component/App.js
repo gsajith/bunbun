@@ -18,8 +18,8 @@ import './App.scss';
 
 const HomeContainer = () => (
   <PageWrapperNoLockup>
-    <Route exact path="/" component={Home} />
-    <Route path="/about" component={About} />
+    <Route exact path="/bunbun" component={Home} />
+    <Route path="/bunbun/about" component={About} />
   </PageWrapperNoLockup>
 );
 
@@ -27,8 +27,8 @@ const DefaultContainer = (props) => {
   const { shopItemClicked } = props;
   return (
     <PageWrapper>
-      <Route path="/shop" render={() => <Shop shopItemClicked={shopItemClicked} />} />
-      <Route path="/catering" component={Catering} />
+      <Route path="/bunbun/shop" render={() => <Shop shopItemClicked={shopItemClicked} />} />
+      <Route path="/bunbun/catering" component={Catering} />
     </PageWrapper>
   );
 };
@@ -97,7 +97,7 @@ export default class App extends Component {
           {' '}
           has been added to
           {' '}
-          <Link className="red" to="/cart">your cart</Link>
+          <Link className="red" to="/bunbun/cart">your cart</Link>
           !
         </Alert>
         <Modal show={detailsShown} handleClose={this.hideDetails}>
@@ -109,8 +109,8 @@ export default class App extends Component {
           />]}
         </Modal>
         <Switch>
-          <Route exact path="/" component={HomeContainer} />
-          <Route path="/about" component={HomeContainer} />
+          <Route exact path="/bunbun" component={HomeContainer} />
+          <Route path="/bunbun/about" component={HomeContainer} />
           <Route render={() => <DefaultContainer shopItemClicked={this.showDetails} />} />
         </Switch>
       </Router>

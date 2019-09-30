@@ -19,7 +19,7 @@ export default class Home extends Component {
               (powder or buds), giving it a distinctive flavour.
             </p>
 
-            <Link to="/shop">
+            <Link to="/bunbun/shop">
               <div className="button">
                 See our buns
               </div>

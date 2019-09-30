@@ -6,8 +6,8 @@ export default class Lockup extends Component {
   render() {
     return (
       <div id="lockup">
-        <Link to="/"><div className="title">Bun Bun</div></Link>
-        <Link to="/"><div className="subtitle">Bake Shop</div></Link>
+        <Link to="/bunbun"><div className="title">Bun Bun</div></Link>
+        <Link to="/bunbun"><div className="subtitle">Bake Shop</div></Link>
       </div>
     );
   }
