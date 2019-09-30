@@ -58,7 +58,6 @@ export default class App extends Component {
   hideDetails() {
     this.setState({
       detailsShown: false,
-      shownItem: null,
     });
   }
 

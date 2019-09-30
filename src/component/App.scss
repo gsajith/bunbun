@@ -140,20 +140,64 @@ body {
   left: 0;
   width:100%;
   height: 100%;
-  background: rgba(252, 234, 222, 0.6);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 2;
 }
 
 .modal-main {
     z-index: 3;
-    position:absolute;
+    position:fixed;
     background: white;
     top: 0;
     right: 0px;
-    width: 50%;
+    width: auto;
+    height: auto;
+    overflow-y: scroll;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.35);
     border-radius: 0 0 0 24px;
-    padding: 45px;
+}
+
+.segmented-button-start, .segmented-button-mid, .segmented-button-end {
+  position: relative;
+  left: 0px;
+  display: inline-block;
+  padding: 22px 14px;
+  color: $orange;
+  border: 3px solid $orange;
+  width: 40px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 1;
+
+  &:hover {
+    cursor: pointer;
+    background: $peach;
+  }
+
+  &.active {
+    background: $red;
+    border: 3px solid $red;
+    color: white;
+    z-index: 2;
+
+    &:hover {
+      cursor: default;
+    }
+  }
+}
+
+.segmented-button-mid, .segmented-button-end {
+  position: relative;
+  margin-left: -3px;
+}
+
+.segmented-button-start {
+  border-radius: 12px 0px 0px 12px;
+}
+
+.segmented-button-end {
+  border-radius: 0px 12px 12px 0px;
 }
 
 /* -------------------- Animations ------------------------- */
@@ -251,6 +295,7 @@ body {
   width: 100vw;
   height: 100%;
   border-radius: 24px 0px 0px 24px;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.35);
   background: 
     linear-gradient(90deg, rgba(252, 234, 222, 0.7) 0%, rgba(252, 234, 222, 0.434) 97.48%), 
     url(https://cdn.glitch.com/94c5cfdd-a174-4ce4-9667-4041d68dcaa7%2Fbunhome.jpeg?v=1569539267303) 
@@ -290,7 +335,7 @@ body {
         line-height: 91px;
         text-align: center;
         letter-spacing: -3px;
-        -webkit-text-stroke: 4.5px $orange;
+        -webkit-text-stroke: 4px $orange;
       }
       
       .subtitle {
@@ -396,9 +441,13 @@ body {
   img {
     display: block;
     margin: auto;
+    margin-right: 0px;
+    border-radius: 8px;
+    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.25);
   }
   p {
     margin: 20px auto;
+    margin-right:0px;
     width: 300px;
     text-align: center;
   }
@@ -409,9 +458,10 @@ body {
   flex-grow: 1;
   height: 100%;
   border-radius: 24px 0px 0px 24px;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.35);
   background: 
-    linear-gradient(90deg, rgba(252, 234, 222, 0.7) 0%, rgba(252, 234, 222, 0.434) 97.48%), 
-    url(https://cdn.glitch.com/94c5cfdd-a174-4ce4-9667-4041d68dcaa7%2Fbunhome.jpeg?v=1569539267303) 
+    linear-gradient(90deg, rgba(252, 234, 222, 0.1) 0%, rgba(252, 234, 222, 0.34) 97.48%), 
+    url(../assets/bakery.jpeg) 
     left center / cover no-repeat;
 }
 
@@ -486,6 +536,100 @@ body {
       width: calc(100% + 10px);
       margin-top: 10px;
       margin-bottom: 10px;
+    }
+  }
+}
+
+/* ----------------------- Catering ---------------------- */
+#details-popup {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 0px 45px 45px 45px;
+
+
+  .flex-item-half {
+    flex-basis: 46%;
+    width: 300px;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    &:nth-child(3) {
+      margin-left: 45px;
+    }
+
+    .item-name {
+      font-family: Poppins;
+      font-weight: 800;
+      font-size: 32px;
+      color: $red;
+    }
+
+    .details-input-label {
+      font-family: Poppins;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 14px;
+      color: $orange;
+      padding-top: 18px;
+      padding-bottom: 4px;
+    }
+  }
+
+  .flex-item-full {
+    flex-basis: 100%;
+    text-align: end;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    color: $blue;
+    font-weight: 900;
+    font-family: Poppins;
+
+    &:hover {
+      color: $red;
+      cursor: pointer;
+    }
+  }
+
+  .description {
+    font-family: Poppins;
+    font-weight: normal;
+    font-size: 16px;
+    padding-top: 24px;
+  }
+
+  img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+  }
+
+  .button {
+    margin-top: 34px;
+  }
+
+  .glaze-container {
+    display: flex;
+    flex-direction: row;
+    min-height: 74px;
+    align-items: center;
+    .glaze-input {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 12px;
+      width: 55px;
+      padding: 0px 14px;
+      height: 100%;
+      min-height: 74px;
+      text-align: center;
     }
   }
 }
