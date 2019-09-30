@@ -92,12 +92,13 @@ export default class App extends Component {
           <span className="red">
             {item.props.name}
             {' '}
-Bun
+            Bun
           </span>
           {' '}
-has been added to
+          has been added to
+          {' '}
           <Link className="red" to="/cart">your cart</Link>
-!
+          !
         </Alert>
         <Modal show={detailsShown} handleClose={this.hideDetails}>
           {[<Details
