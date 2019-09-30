@@ -78,6 +78,17 @@ body {
   }
 }
 
+.no-select {
+  // From: https://stackoverflow.com/questions/826782/how-to-disable-text-selection-highlighting
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
 .title {
   color: $white;
   font-family: Lilita One;
@@ -169,10 +180,12 @@ body {
   font-size: 18px;
   font-weight: bold;
   z-index: 1;
+  transition: $transition;
 
-  &:hover {
+  &:hover, &:focus {
     cursor: pointer;
     background: $peach;
+    outline: none;
   }
 
   &.active {
@@ -198,6 +211,23 @@ body {
 
 .segmented-button-end {
   border-radius: 0px 12px 12px 0px;
+}
+
+.alert {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  height: 25px;
+  background-color: $peach;
+  color: orange;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  transform: translateX(-50%);
+  padding: 15px 25px;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
 }
 
 /* -------------------- Animations ------------------------- */
@@ -236,6 +266,28 @@ body {
 .slide-in-right-exit.slide-in-right-exit-active {
   transform: translateX(100%);
   transition: transform 250ms ease-in-out;
+}
+
+.alert-anim-enter {
+  opacity: 0.01;
+  transform: translateX(200%) scale(.8, .7);
+}
+
+.alert-anim-enter.alert-anim-enter-active {
+  opacity: 1;
+  transform: translateX(-50%) scale(1, 1);
+  transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
+}
+
+.alert-anim-exit {
+  opacity: 1;
+  transform:  translate(-50%) scale(1, 1);
+}
+
+.alert-anim-exit.alert-anim-exit-active {
+  opacity: 0.01;
+  transform:  translate(-50%) scale(.5, .5);
+  transition: transform 250ms ease-in-out, opacity 250ms ease-in-out;
 }
 
 
@@ -517,8 +569,9 @@ body {
       margin-bottom: 10px;
     
       &:nth-child(4) {
-        flex-basis: 50%;
+        flex-basis: 35%;
         margin-right: 20px;
+        flex-grow: 1;
       }
       
       &:nth-child(5) {
@@ -576,6 +629,10 @@ body {
       color: $orange;
       padding-top: 18px;
       padding-bottom: 4px;
+
+      &.glaze-label {
+        padding-top: 0px;
+      }
     }
   }
 
@@ -593,6 +650,21 @@ body {
     &:hover {
       color: $red;
       cursor: pointer;
+    }
+  }
+
+  .price-label {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: $orange;
+    text-align: center;
+    margin-top: 8px;
+
+    .price {
+      color: $red;
+      font-weight: bold;
     }
   }
 
@@ -615,11 +687,29 @@ body {
     margin-top: 34px;
   }
 
+  .details-summary {
+    width: 100%;
+    height: 48px;
+    padding-top: 12px;
+    border: 3px solid $orange;
+    border-radius: 12px;
+    font-family: Poppins;
+    font-weight: bold;
+    color: $orange;
+    font-size: 24px;
+    text-align: center;
+
+    .emphasis {
+      color: $red;
+    }
+  }
+
   .glaze-container {
     display: flex;
     flex-direction: row;
     min-height: 74px;
     align-items: center;
+
     .glaze-input {
       display: flex;
       flex-direction: column;

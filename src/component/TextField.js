@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export default class TextField extends Component {
   render() {
     const {
-      required, header, inputType, name, placeholder, value,
+      required, header, type, name, placeholder, value,
     } = this.props;
     const requiredSet = required === 'true' ? true : null;
     return (
@@ -13,10 +13,10 @@ export default class TextField extends Component {
         <div className="textfield-header">{header}</div>
         <input
           className="textfield-input"
-          type={inputType}
+          type={type}
           name={name}
           placeholder={placeholder}
-          value={value}
+          defaultValue={value}
           required={requiredSet}
         />
       </div>
@@ -27,7 +27,7 @@ export default class TextField extends Component {
 TextField.propTypes = {
   required: PropTypes.string,
   header: PropTypes.string,
-  inputType: PropTypes.string.isRequired,
+  type: PropTypes.string,
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   value: PropTypes.string,
@@ -37,5 +37,6 @@ TextField.defaultProps = {
   required: null,
   header: null,
   placeholder: null,
-  value: null,
+  value: '',
+  type: null,
 };

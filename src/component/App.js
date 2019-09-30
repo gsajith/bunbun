@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
-  BrowserRouter as Router, Switch, Route,
+  BrowserRouter as Router, Switch, Route, Link,
 } from 'react-router-dom';
 
 import PageWrapper from './PageWrapper';
@@ -12,6 +12,7 @@ import Shop from './Shop';
 import Details from './Details';
 import Catering from './Catering';
 import Modal from './Modal';
+import Alert from './Alert';
 
 import './App.scss';
 
@@ -42,9 +43,11 @@ export default class App extends Component {
     super(props);
     this.showDetails = this.showDetails.bind(this);
     this.hideDetails = this.hideDetails.bind(this);
+    this.addToCart = this.addToCart.bind(this);
     this.state = {
       detailsShown: false,
       shownItem: null,
+      alertShown: false,
     };
   }
 
@@ -61,19 +64,48 @@ export default class App extends Component {
     });
   }
 
+  addToCart() {
+    this.setState({
+      detailsShown: false,
+      alertShown: true,
+    });
+    setTimeout(() => {
+      this.setState({
+        alertShown: false,
+      });
+    }, 3000);
+  }
+
   render() {
-    const { detailsShown, shownItem } = this.state;
+    const { detailsShown, shownItem, alertShown } = this.state;
     const item = shownItem != null ? shownItem : {
       props: {
         name: '',
         description: '',
         price: '',
+        scalingPrice: [0, 0, 0, 0],
       },
     };
     return (
       <Router>
+        <Alert show={alertShown}>
+          <span className="red">
+            {item.props.name}
+            {' '}
+Bun
+          </span>
+          {' '}
+has been added to
+          <Link className="red" to="/cart">your cart</Link>
+!
+        </Alert>
         <Modal show={detailsShown} handleClose={this.hideDetails}>
-          {[<Details key="0" handleClose={this.hideDetails} item={item} />]}
+          {[<Details
+            key="0"
+            handleClose={this.hideDetails}
+            handleCartAdd={this.addToCart}
+            item={item}
+          />]}
         </Modal>
         <Switch>
           <Route exact path="/" component={HomeContainer} />

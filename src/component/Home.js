@@ -17,7 +17,6 @@ export default class Home extends Component {
               takes the name of kanelbulle. Since 1999,
               Swedish kanelbulle dough typically also contains cardamom
               (powder or buds), giving it a distinctive flavour.
-              {' '}
             </p>
 
             <Link to="/shop">

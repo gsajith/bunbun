@@ -18,7 +18,13 @@ export default class Card extends Component {
       img, name, price,
     } = this.props;
     return (
-      <div className="card" onClick={this.cardClicked}>
+      <div
+        className="card"
+        onClick={this.cardClicked}
+        onKeyPress={this.cardClicked}
+        role="link"
+        tabIndex={0}
+      >
         <img src={img} alt={name} />
         <div className="name">
           {name}

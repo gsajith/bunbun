@@ -12,7 +12,14 @@ const Modal = ({ handleClose, show, children }) => (
       mountOnEnter
       unmountOnExit
     >
-      <div className="modal" onClick={handleClose} />
+      <div
+        className="modal"
+        onClick={handleClose}
+        onKeyPress={handleClose}
+        role="link"
+        tabIndex={0}
+        aria-label="close"
+      />
     </CSSTransition>
     <CSSTransition
       in={show}

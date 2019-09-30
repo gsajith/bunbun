@@ -6,7 +6,10 @@ export default class About extends Component {
     return (
       <div id="about-flex" className="flex">
         <div id="about-map-container">
-          <img alt="Map" src="https://cdn.glitch.com/94c5cfdd-a174-4ce4-9667-4041d68dcaa7%2FBunBunMap.png?v=1569555535560" />
+          <img
+            alt="Map"
+            src="https://cdn.glitch.com/94c5cfdd-a174-4ce4-9667-4041d68dcaa7%2FBunBunMap.png?v=1569555535560"
+          />
           <p>
             Now serving
             <span className="normal">metropolitan Pittsburgh and surrounding areas.</span>

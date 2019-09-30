@@ -15,17 +15,25 @@ export default class Catering extends Component {
 
   render() {
     return (
-      <form id="catering-form-container" className="flex" ref={this.form} onSubmit={(e) => e.preventDefault()}>
+      <form
+        id="catering-form-container"
+        className="flex"
+        ref={this.form}
+        onSubmit={(e) => e.preventDefault()}
+      >
         <h1>Have our buns at your next event.</h1>
 
         <div id="catering-form-image">
-          <img alt="Catering form" src="https://cdn.glitch.com/94c5cfdd-a174-4ce4-9667-4041d68dcaa7%2Fphoto-1566580349992-ca2c6689d9c8.jpeg?v=1569631265365" />
+          <img
+            alt="Catering form"
+            src="https://cdn.glitch.com/94c5cfdd-a174-4ce4-9667-4041d68dcaa7%2Fphoto-1566580349992-ca2c6689d9c8.jpeg?v=1569631265365"
+          />
         </div>
         <div id="catering-form-fields">
           <TextField header="What's your name?" type="text" name="input-name" placeholder="Your name here" required="true" />
           <TextField header="And your email?" type="email" name="input-email" placeholder="Email" required="true" />
           <TextField header="What kind of event are you hosting?" type="text" name="input-event" placeholder="Event type" required="true" />
-          <TextField header="How many people?" type="number" name="input-people" placeholder="# of people" required="true" />
+          <TextField header="Guests?" type="number" name="input-people" placeholder="# of people" required="true" />
           <TextField header="On what day?" type="date" name="input-day" placeholder="Date" required="true" />
 
           <div className="button" onClick={this.validate} onKeyPress={this.validate} role="button" tabIndex={0}>
