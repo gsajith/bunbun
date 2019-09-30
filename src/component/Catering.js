@@ -26,7 +26,7 @@ export default class Catering extends Component {
         <div id="catering-form-image">
           <img
             alt="Catering form"
-            src="https://cdn.glitch.com/94c5cfdd-a174-4ce4-9667-4041d68dcaa7%2Fphoto-1566580349992-ca2c6689d9c8.jpeg?v=1569631265365"
+            src="/assets/bunbuncatering.jpeg"
           />
         </div>
         <div id="catering-form-fields">

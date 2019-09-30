@@ -9,7 +9,7 @@ export default class Shop extends Component {
     this.shopItems = [
       {
         id: '1',
-        img: 'https://cdn.glitch.com/94c5cfdd-a174-4ce4-9667-4041d68dcaa7%2Fbunbunoriginal.jpeg?v=1569551668721',
+        img: '/assets/bunbunoriginal.jpeg',
         name: 'Original',
         description: 'A delicious Original bun baked fresh in our Pittsburgh shop, packaged and shipped to you.',
         price: '$3',
@@ -17,7 +17,7 @@ export default class Shop extends Component {
       },
       {
         id: '2',
-        img: 'https://cdn.glitch.com/94c5cfdd-a174-4ce4-9667-4041d68dcaa7%2Fbunbunblackberry.jpeg?v=1569551666817',
+        img: '/assets/bunbunblackberry.jpeg',
         name: 'Blackberry',
         description: 'A delicious Blackberry bun baked fresh in our Pittsburgh shop, packaged and shipped to you.',
         price: '$4',
@@ -25,7 +25,7 @@ export default class Shop extends Component {
       },
       {
         id: '3',
-        img: 'https://cdn.glitch.com/94c5cfdd-a174-4ce4-9667-4041d68dcaa7%2Fbunbunwalnut.jpeg?v=1569551668513',
+        img: '/assets/bunbunwalnut.jpeg',
         name: 'Walnut',
         description: 'A delicious Walnut bun baked fresh in our Pittsburgh shop, packaged and shipped to you.',
         price: '$4',
@@ -33,7 +33,7 @@ export default class Shop extends Component {
       },
       {
         id: '4',
-        img: 'https://cdn.glitch.com/94c5cfdd-a174-4ce4-9667-4041d68dcaa7%2Fbunbungf.jpeg?v=1569551666513',
+        img: '/assets/bunbungf.jpeg',
         name: 'Original (GF)',
         description: 'A delicious Gluten-Free bun baked fresh in our Pittsburgh shop, packaged and shipped to you.',
         price: '$5',
@@ -41,7 +41,7 @@ export default class Shop extends Component {
       },
       {
         id: '5',
-        img: 'https://cdn.glitch.com/94c5cfdd-a174-4ce4-9667-4041d68dcaa7%2Fbunbunpumpkinspice.jpeg?v=1569551669987',
+        img: '/assets/bunbunpumpkinspice.jpeg',
         name: 'Pumpkin Spice',
         description: 'A delicious Pumpkin Spice bun baked fresh in our Pittsburgh shop, packaged and shipped to you.',
         price: '$4',
@@ -49,7 +49,7 @@ export default class Shop extends Component {
       },
       {
         id: '6',
-        img: 'https://cdn.glitch.com/94c5cfdd-a174-4ce4-9667-4041d68dcaa7%2Fbunbuncaramelpecan.jpeg?v=1569551667538',
+        img: '/assets/bunbuncaramelpecan.jpeg',
         name: 'Caramel Pecan',
         description: 'A delicious Caramel Pecan bun baked fresh in our Pittsburgh shop, packaged and shipped to you.',
         price: '$4',
