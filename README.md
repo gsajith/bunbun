@@ -4,18 +4,21 @@
 
 This is a React website for a fictional bakery based in Pittsburgh, PA.
 
-The site is live at [https://gsajith.com/bunbun/](https://gsajith.com/bunbun/)!
+The site is live at [https://gsajith.com/bunbun/](https://gsajith.com/bunbun/)
 
 **However**, it is best viewed by cloning the repo and running `npm start` in the project directory. This will start the app at [http://localhost:3000/bunbun/](http://localhost:3000/bunbun/) in your browser.
 
+## Extra work I did
 Features:
  - Home page (/bunbun)
  - Product browsing page (/bunbun/shop)
  - Product details page (Modal when clicking on a product card)
-	 - **Bonus** product details are built for every item
+	 - **Bonus** product details are built for every store item
  - **Bonus** About page (/bunbun/about) 
  - **Bonus** Catering page (/bunbun/catering) 
  - **Bonus** "Added to cart" snackbar when item is added to your cart
+
+## Other details
 
 The interesting source code lives under `src/component`.
 
